@@ -2,6 +2,7 @@ class Solution {
 public:
     vector<vector<int>> generate(int numRows) {
         vector<vector<int>> pascalTriangle;
+        pascalTriangle.reserve(numRows*(numRows+1)/2);
         for(int i=0;i<numRows; i++){
             vector<int> tmpRow(i+1,0);
             for(int j=0;j<i+1;j++){
