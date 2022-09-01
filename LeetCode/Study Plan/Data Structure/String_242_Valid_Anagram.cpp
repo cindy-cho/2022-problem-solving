@@ -15,3 +15,24 @@ public:
         return true;
     }
 };
+
+// Runtime: 8 ms, faster than 82.56% / Memory Usage: 7.4 MB, less than 8.66%
+class Solution {
+public:
+    bool isAnagram(string s, string t) {
+        if(s.length()!=t.length()) return false;
+        
+        vector<int> sCount (26,0), tCount(26,0);
+        for(auto ch : s){
+            sCount[ch-'a']++;
+        }
+        
+        for(auto ch : t){
+            tCount[ch-'a']++;
+        }
+        
+        for(int i=0;i<26;i++) if(sCount[i] != tCount[i]) return false;
+        
+        return true;
+    }
+};
